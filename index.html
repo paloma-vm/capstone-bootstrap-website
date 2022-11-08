@@ -14,19 +14,29 @@
   <!-- NAVBAR -->
 
   <nav class="py-2 bg-secondary border-bottom">
-    <div class="container d-flex flex-wrap">
+    <div class="container d-flex flex-wrap mx-0 col-lg-12">
       <ul class="nav me-auto">
         <li class="nav-item"><a href="#" class="nav-link link-dark px-2 active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">About</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Contact</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link link-dark px-2">About</a></li>
+        <!-- <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Popular Topics</a></li> -->
+        <li class="nav-item"><a class="nav-link link-dark px-2" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+          Explore
+        </li>
       </ul>
       <ul class="nav">
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Sign up</a></li>
+        <!-- <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Sign up</a></li> -->
+        
+        <li class="nav-item">
+            <!-- Button trigger modal -->
+          <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Sign up for updates
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
   <!-- HEADER -->
-  <header class="py-3 px-3 mb-2 border-bottom header-light bg-primary">
+  <header class="py-3 px-3 mb-2 border-bottom header-light bg-primary sticky-top">
     <div class="row d-flex flex-wrap justify-content-space-between">
       <a href="/" class=" col d-flex align-items-center mb-lg-0 me-lg-auto text-light text-decoration-none">
         <img src="images/Zodiac_Killer_symbol.png" class="" alt="..." width="40" height="40"> 
@@ -38,6 +48,48 @@
       </form>
     </div>
   </header>
+
+  <!-- OFFCANVAS -->
+  <!-- <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    Button with data-bs-target
+  </button> -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Topics of Interest</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        Click on a topic to read more about it.
+        <div class="p-4">
+          <!-- <h4 class="fst-italic">Links</h4> -->
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">Drafting</a></li>
+            <li><a href="#">Zines</a></li>
+            <li><a href="#">Sketches</a></li>
+            <li><a href="#">Ciphers</a></li>
+            <li><a href="#">Letters</a></li>
+            <li><a href="#">Renaissance</a></li>
+            <li><a href="#">Timeline</a></li>
+            <li><a href="#">Crimes</a></li>
+            <li><a href="#">Opinion</a></li>
+          </ol>
+        </div>
+
+        <!-- <div class="p-4">
+          <h4 class="fst-italic">Other Useful Sites</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ol>
+        </div> -->
+      </div>
+    </div>
+  </div>
 
     <!-- SCROLLER
   <div class="nav-scroller py-1 mb-2">
@@ -54,6 +106,54 @@
     </nav>
   </div> -->
 
+
+  <!-- MODAL -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Sign up to be notified of new content</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <fieldset>
+              <!-- <legend>Legend</legend> -->
+              <div class="form-group">
+                <label for="exampleInputPassword1" class="form-label mt-4">Name</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="First and Last">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+  
+              <div class="form-group">
+                <label for="exampleSelect2" class="form-label mt-4">How did you find this site?</label>
+                <select multiple="" class="form-select" id="exampleSelect2">
+                  <option>Search results</option>
+                  <option>Link from Reddit</option>
+                  <option>Link from forum</option>
+                  <option>Word of mouth</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleTextarea" class="form-label mt-4">Please use this space for any comments, questions, or suggestions.</label>
+                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+              </div>
+         
+              
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- FEATURE -->
   
     <div class="row p-4 p-md-5 mb-4 rounded text-bg-dark" style="height: 400px;">
@@ -102,29 +202,29 @@
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
-        <div class="card h-100">
+        <div class="card h-100 text-white bg-secondary">
           <img src="images/bomb-sketch.jpeg" class="card-img-top img-fluid" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title">Zodiac was a drafter</h5>
+            <p class="card-text">Zodiac's sketches are the smoking gun that points to Doerr being Zodiac.</p>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="card h-100">
+        <div class="card h-100 text-white bg-secondary">
           <img src="images/Zodiac MAP June 26 1970 LARGE.jpeg" class="card-img-top img-fluid" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a short card.</p>
+            <h5 class="card-title">The Reasons</h5>
+            <p class="card-text">The list of reasons why Doerr was likely the Zodiac Killer</p>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="card h-100">
+        <div class="card h-100 text-white bg-secondary">
           <img src="images/doerr-mustache.webp" class="card-img-top img-fluid" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            <h5 class="card-title">How did Doerr become a suspect?</h5>
+            <p class="card-text">An explanation of how Doerr was discovered.</p>
           </div>
         </div>
     </div>
@@ -154,7 +254,7 @@
                   <option value="3">Maybe</option>
                 </select>
                 <div class="text-end">
-                  <button type="button" class="btn btn-primary">Submit</button>
+                  <button type="button" class="btn btn-primary" ><a href="page-2.html" class="text-white text-decoration-none">Submit</a></button>
                 </div>
               </form>
             </div>
@@ -163,13 +263,13 @@
       </div>
       <div class="col-md-4">
         <div class="position-sticky" style="top: 2rem;">
-          <div class="p-4 mb-3 bg-light rounded">
+          <div id="about" class="p-4 mb-3 bg-light rounded">
             <h4 class="fst-italic">About</h4>
             <p class="mb-0"><em>Deciphered</em>  aims to explain why Paul Doerr is the most likely Zodiac Killer suspect. 
               <br>
               <br>
               Based on over 20 years of interest in this case,  
-              Paul Doerr fits the Zodiac profile that I have developed from my frame of reference.</p>
+              Paul Doerr fits the Zodiac profile that has been developed from a drafter's frame of reference.</p>
           </div>
 
           <div class="p-4">
@@ -187,14 +287,14 @@
             </ol>
           </div>
 
-          <div class="p-4">
+          <!-- <div class="p-4">
             <h4 class="fst-italic">Other Useful Sites</h4>
             <ol class="list-unstyled">
               <li><a href="#">GitHub</a></li>
               <li><a href="#">Twitter</a></li>
               <li><a href="#">Facebook</a></li>
             </ol>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -211,7 +311,7 @@
   
       <ul class="nav col-md-4 justify-content-end">
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link px-2 text-muted">About</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
       </ul>
     </footer>
